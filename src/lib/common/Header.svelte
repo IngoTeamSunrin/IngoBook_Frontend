@@ -94,7 +94,6 @@
 		overflow: hidden;
 	}
 	header {
-		top: 0;
 		left: 0;
 		position: fixed;
 		display: flex;
@@ -107,6 +106,7 @@
 		background: rgba(255, 248, 248, 0.75);
 		backdrop-filter: blur(24px);
 		-webkit-backdrop-filter: blur(24px);
+		align-self: flex-start;
 		.wrap {
 			width: 1553px;
 			display: flex;

@@ -11,18 +11,15 @@
 {/key}
 
 <style lang="scss">
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        top:72px;
-        width: 100%;
-        min-height: 100vh;
+
       .section{
+          top: 80px;
         position: relative;
         width: 100%;
         min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
       }
-    }
+
 </style>

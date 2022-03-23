@@ -10,6 +10,7 @@
 
 <style lang="scss">
 	footer {
+    top: 80px;
 		position: relative;
 		left: 0;
 		display: flex;
@@ -23,7 +24,6 @@
 		border-top: 1px solid #FFE3E3;
 		font-size: 15px;
 		color: var(--footer-sub-text-color);
-		align-self: flex-end;
 		img {
 			width: 146px;
 			height: auto;

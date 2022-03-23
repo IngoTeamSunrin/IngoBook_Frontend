@@ -435,10 +435,373 @@
 	</div>
 </div>
 <div class="body_wrap">
-	<div class="start" />
-	<div class="end" />
+	<div class='body_wrap_vertical'>
+		<div class='see_my_book'>
+			<div class='top_wrap'>
+			<div class='title'>
+				내 책 찾기
+				<div class='underline'></div>
+			</div>
+				<div class='see_all_content'>
+					크게 보기
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+						<path id="패스_491" data-name="패스 491" d="M12,4,10.59,5.41,16.17,11H4v2H16.17l-5.58,5.59L12,20l8-8Z" transform="translate(-4 -4)" fill="#7f6868"/>
+					</svg>
+
+				</div>
+			</div>
+			<div class='main_wrap'>
+				<div class='book_list'>
+					<div class='title'>북마크</div>
+					<div class='book_list_grid'>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+					</div>
+				</div>
+				<hr class='box_line'>
+			</div>
+		</div>
+		<div class='see_my_book'>
+			<div class='top_wrap'>
+				<div class='title'>
+					학년별 찾기
+					<div class='underline'></div>
+				</div>
+				<div class='see_all_content'>
+					크게 보기
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+						<path id="패스_491" data-name="패스 491" d="M12,4,10.59,5.41,16.17,11H4v2H16.17l-5.58,5.59L12,20l8-8Z" transform="translate(-4 -4)" fill="#7f6868"/>
+					</svg>
+
+				</div>
+			</div>
+			<div class='main_wrap'>
+				<div class='selection'>
+					<div class='title'>학년 선택</div>
+					<ul class='options'>
+						<button class='option_filter selected'>1학년</button>
+						<button class='option_filter'>2학년</button>
+						<button class='option_filter'>3학년</button>
+					</ul>
+				</div>
+				<div class='selection'>
+					<div class='title'>학과 선택</div>
+					<ul class='options'>
+						<button class='option_filter selected'>소프트웨어과</button>
+						<button class='option_filter'>정보보호과</button>
+						<button class='option_filter'>IT경영과</button>
+						<button class='option_filter'>콘텐츠디자인과</button>
+					</ul>
+				</div>
+				<hr>
+				<div class='book_list'>
+					<div class='book_list_grid'>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+						<div class='book_wrap'>
+							<img src='images/textbook.jpeg' alt=''>
+							<div class='book_name'>1학년 국어</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
 </div>
 
 <style lang="scss">
-	@import '../main.scss';
+  .app_bar_title {
+    position: relative;
+    background: #fff8f8;
+    width: 100%;
+    margin: 0;
+    padding-top: 56px;
+    padding-bottom: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ffe3e3;
+    .wrap {
+      display: flex;
+      flex-direction: row;
+      width: 1553px;
+      justify-content: space-between;
+      .start {
+        .title {
+          color: #ff7070;
+          font-size: 4em;
+          font-weight: 500;
+          line-height: 94px;
+          .bold {
+            position: relative;
+            z-index: 500;
+            font-weight: 700;
+          }
+          .underline {
+            position: absolute;
+            width: 616px;
+            height: 24px;
+            background: #ffe3e3;
+            top: 210px;
+            z-index: 4;
+          }
+        }
+        .subtitle {
+          margin-top: 47px;
+          font-size: 22px;
+          color: #553a3a;
+          font-weight: 400;
+        }
+      }
+      .end {
+        svg {
+          position: relative;
+        }
+      }
+    }
+  }
+  .announce_bar {
+    background: #fff2f2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 72px;
+    .wrap {
+      width: 1553px;
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      .announce_component {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+        color: #ff7070;
+        font-size: 22px;
+        font-weight: 600;
+        margin-right: 24px;
+        svg {
+          margin-right: 12px;
+        }
+      }
+      .announce_title {
+        color: #553a3a;
+        font-size: 22px;
+      }
+    }
+  }
+  .body_wrap {
+		position: relative;
+    width: 1553px;
+		height: auto;
+    display: flex;
+    flex-direction: column;
+		align-items: center;
+		.body_wrap_vertical {
+			display: flex;
+      position: relative;
+			flex-direction: row;
+			margin-top: 72px;
+			justify-content: space-between;
+			align-items: start;
+			width: 100%;
+			.see_my_book {
+				width: 744px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.top_wrap {
+					width: 713px;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					.title {
+						font-size: 32px;
+						font-weight: 600;
+						color: #553A3A;
+						box-shadow: inset 0 -10px 0 #FFE3E3;
+					}
+					.see_all_content {
+            color: #7F6868;
+            font-size: 22px;
+
+            svg {
+              margin-left: 12px;
+            }
+          }
+				}
+				.main_wrap {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: 680px;
+					padding: 44px 32px;
+					border: 1px solid #FFE3E3;
+					background: #FFF8F8;
+					margin-top: 45px;
+					border-radius: 16px;
+					hr {
+						border: none;
+						border-top: 1px solid #FFE3E3;
+						width: 100%;
+						margin-top: 35px;
+						margin-bottom: 35px;
+					}
+          .selection {
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+						align-items: start;
+            .title {
+              margin-left: 16px;
+              color: #553A3A;
+              font-size: 28px;
+              font-weight: 600;
+              width: 680px;
+            }
+						.options {
+							display: flex;
+							width: 100%;
+							padding-left: 0;
+							margin-top: 25px;
+							margin-bottom: 50px;
+							margin-left: 5px;
+							flex-direction: row;
+							align-items: center;
+							flex-wrap: wrap;
+							.option_filter {
+								font-family: Pretendard;
+								color: #7F6868;
+								padding: 14px 40px;
+								border: 2px solid #FFE3E3;
+								border-radius: 28px;
+								font-size: 22px;
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								justify-content: center;
+								background: #FFF8F8;
+								margin-left: 16px;
+								&.selected {
+									background: #FF7070;
+									border: none;
+									color: white;
+								}
+								&:nth-child(4) {
+									margin-top: 10px;
+									margin-left: 0;
+								}
+								&:first-child {
+									margin-left: 0;
+								}
+							}
+						}
+          }
+					.book_list {
+						margin-bottom: 30px;
+            width: 680px;
+						.title {
+							margin-left: 16px;
+							color: #553A3A;
+							font-size: 28px;
+							font-weight: 600;
+							width: 680px;
+						}
+						.book_list_grid {
+							position: relative;
+
+							margin-right: 0;
+							display: grid;
+              grid-template-columns: repeat(3,1fr);
+							gap: 4px;
+							.book_wrap {
+
+                margin-top: 45px;
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								justify-content: space-between;
+								img {
+									width: 192px;
+									height: auto;
+									border: 2px solid #569ED8;
+									border-radius: 8px;
+								}
+								.book_name {
+									color: #553A3A;
+									font-size: 22px;
+									margin-top: 27px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+  }
+  @media only screen and (max-width: 1024px) {
+    .start {
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 480px) {
+  }
+
 </style>
