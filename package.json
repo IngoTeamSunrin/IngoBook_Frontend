@@ -16,8 +16,8 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.19.1",
-		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
+		"@types/cookie": "^0.4.1",
 		"@typescript-eslint/eslint-plugin": "^5.10.1",
 		"@typescript-eslint/parser": "^5.10.1",
 		"eslint": "^7.32.0",
@@ -28,12 +28,13 @@
 		"prettier-plugin-svelte": "^2.5.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.2.6",
-		"svelte-preprocess": "^4.10.4",
+		"svelte-preprocess": "next",
 		"tslib": "^2.3.1",
 		"typescript": "~4.6.2"
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-node": "next"
+		"@sveltejs/adapter-node": "next",
+		"cookie": "^0.4.2"
 	}
 }

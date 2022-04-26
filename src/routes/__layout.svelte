@@ -1,12 +1,3 @@
-<script context="module">
-	export const load = async ({ url, params }) => ({
-		props: {
-			url,
-			params
-		}
-	});
-</script>
-
 <script lang="ts">
 	import '/src/app.css';
 	import Header from '$lib/common/Header.svelte';

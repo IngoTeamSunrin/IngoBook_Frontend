@@ -1,15 +1,13 @@
 import adapter from '@sveltejs/adapter-node';
 import preprocess from 'svelte-preprocess';
 
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
+
+export default {
 	preprocess: preprocess({
 		scss: { includePaths: ['src', 'node_modules'] }
 	}),
-
 	kit: {
-		adapter: adapter({ out: `build` })
+		adapter: adapter({ out: `build` }),
 	}
 };
 
-export default config;

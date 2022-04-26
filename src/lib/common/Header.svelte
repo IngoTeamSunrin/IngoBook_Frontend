@@ -5,17 +5,113 @@
 	const toggleModal = () => {
 		modal = !modal;
 	};
-	import { get } from 'svelte/store';
-	import { session } from '$app/stores';
+
+	import { onMount } from 'svelte';
 
 	const user = 3;
+	const STORAGE_KEY = 'theme';
+	const DARK_PREFERENCE = '(prefers-color-scheme: dark)';
+
+	const THEMES = {
+		DARK: 'dark',
+		LIGHT: 'light'
+	};
+	let currentTheme;
+	const prefersDarkThemes = () => window.matchMedia(DARK_PREFERENCE).matches;
+
+	const applyTheme = () => {
+		const preferredTheme = prefersDarkThemes() ? THEMES.DARK : THEMES.LIGHT;
+
+		currentTheme = localStorage.getItem(STORAGE_KEY) ?? preferredTheme;
+
+		currentTheme = localStorage.getItem(STORAGE_KEY) ?? preferredTheme;
+
+		if (currentTheme === THEMES.DARK) {
+			document.body.classList.remove(THEMES.LIGHT);
+			document.body.classList.add(THEMES.DARK);
+		} else {
+			document.body.classList.remove(THEMES.DARK);
+			document.body.classList.add(THEMES.LIGHT);
+		}
+	};
+
+	const toggleTheme = () => {
+		const stored = localStorage.getItem(STORAGE_KEY);
+		0;
+
+		if (stored) {
+			// Storage 초기화
+			localStorage.removeItem(STORAGE_KEY);
+		} else {
+			localStorage.setItem(STORAGE_KEY, prefersDarkThemes() ? THEMES.LIGHT : THEMES.DARK);
+		}
+
+		applyTheme();
+	};
+
+	onMount(() => {
+		applyTheme();
+		window.matchMedia(DARK_PREFERENCE).addEventListener('change', applyTheme);
+	});
 </script>
 
 <header>
 	<div class="wrap">
 		<div class="first">
 			<a href="/">
-				<img src="/images/logo.svg" alt="" class="logo" />
+				<svg
+					class="logo"
+					xmlns="http://www.w3.org/2000/svg"
+					width="144.57"
+					height="28"
+					viewBox="0 0 144.57 28"
+				>
+					<g id="로고" transform="translate(-185.43 -27)">
+						<path
+							id="패스_490"
+							data-name="패스 490"
+							d="M4.945-16.969H1.43V0H4.945ZM11.2-7.359a2.375,2.375,0,0,1,2.437-2.648,2.217,2.217,0,0,1,2.3,2.508V0h3.445V-8.109c.012-2.965-1.723-4.781-4.383-4.781A3.848,3.848,0,0,0,11.18-10.5h-.141v-2.227h-3.3V0H11.2ZM27.8,5.039c3.621,0,6.176-1.652,6.187-4.9V-12.727H30.539v2.133H30.4a3.763,3.763,0,0,0-3.633-2.3c-2.812,0-5.18,2.145-5.18,6.445,0,4.242,2.309,6.27,5.18,6.258A3.682,3.682,0,0,0,30.4-2.25h.164V.07c-.012,1.77-1.09,2.461-2.7,2.461-1.383,0-2.344-.457-2.531-1.477H21.914C22.113,3.457,24.281,5.039,27.8,5.039ZM25.148-6.4c-.012-2.191.926-3.727,2.7-3.727,1.746,0,2.719,1.465,2.719,3.727s-.984,3.6-2.719,3.609C26.086-2.8,25.137-4.2,25.148-6.4ZM42.4.258c3.855-.012,6.246-2.648,6.258-6.586-.012-3.926-2.4-6.562-6.258-6.562s-6.246,2.637-6.234,6.562C36.152-2.391,38.555.246,42.4.258ZM39.68-6.328c0-2.238.926-3.914,2.742-3.914,1.77,0,2.707,1.676,2.7,3.914.012,2.227-.926,3.879-2.7,3.891C40.605-2.449,39.68-4.1,39.68-6.328ZM50.906,0h7.2c3.832,0,5.848-1.992,5.859-4.687a3.959,3.959,0,0,0-3.727-4.125v-.164a3.6,3.6,0,0,0,3.047-3.633c.012-2.555-1.887-4.359-5.625-4.359h-6.75Zm3.516-2.906V-7.453h3.07c1.734,0,2.824,1.008,2.812,2.437.012,1.277-.867,2.121-2.906,2.109Zm0-6.961v-4.242h2.789c1.605,0,2.52.832,2.508,2.062.012,1.359-1.1,2.191-2.578,2.18ZM71.836.258c3.855-.012,6.246-2.648,6.258-6.586-.012-3.926-2.4-6.562-6.258-6.562S65.59-10.254,65.6-6.328C65.59-2.391,67.992.246,71.836.258ZM69.117-6.328c0-2.238.926-3.914,2.742-3.914,1.77,0,2.707,1.676,2.7,3.914.012,2.227-.926,3.879-2.7,3.891C70.043-2.449,69.117-4.1,69.117-6.328ZM85.992.258c3.855-.012,6.246-2.648,6.258-6.586-.012-3.926-2.4-6.562-6.258-6.562s-6.246,2.637-6.234,6.562C79.746-2.391,82.148.246,85.992.258ZM83.273-6.328c0-2.238.926-3.914,2.742-3.914,1.77,0,2.707,1.676,2.7,3.914.012,2.227-.926,3.879-2.7,3.891C84.2-2.449,83.273-4.1,83.273-6.328ZM94.43,0H97.9V-4.078l.973-1.1,3.5,5.18h4.078l-5-7.219,4.746-5.508h-3.984L98.086-7.852H97.9v-9.117H94.43Z"
+							transform="translate(184 49)"
+							fill="#553a3a"
+						/>
+						<g id="menu_book_black_24dp" transform="translate(302 27)">
+							<g id="그룹_1" data-name="그룹 1">
+								<rect id="사각형_126" data-name="사각형 126" width="28" height="28" fill="none" />
+								<rect id="사각형_127" data-name="사각형 127" width="28" height="28" fill="none" />
+							</g>
+							<g id="그룹_2" data-name="그룹 2" transform="translate(1.167 5.25)">
+								<path
+									id="패스_1"
+									data-name="패스 1"
+									d="M20.25,4.5a10.85,10.85,0,0,0-6.417,1.75A10.85,10.85,0,0,0,7.417,4.5a12.623,12.623,0,0,0-4.993.922A2.377,2.377,0,0,0,1,7.58V20.74A2.328,2.328,0,0,0,3.893,23a14.408,14.408,0,0,1,3.523-.42,12.337,12.337,0,0,1,5.32,1.073,2.4,2.4,0,0,0,2.182,0,12.169,12.169,0,0,1,5.32-1.073,14.409,14.409,0,0,1,3.523.42,2.317,2.317,0,0,0,2.893-2.263V7.58a2.377,2.377,0,0,0-1.423-2.158A12.527,12.527,0,0,0,20.25,4.5Zm4.083,14.852a1.178,1.178,0,0,1-1.4,1.143,14.71,14.71,0,0,0-2.683-.233,14.053,14.053,0,0,0-6.417,1.75V8.583a14.053,14.053,0,0,1,6.417-1.75,14.8,14.8,0,0,1,3.15.327A1.183,1.183,0,0,1,24.333,8.3Z"
+									transform="translate(-1 -4.5)"
+									fill="#553a3a"
+								/>
+								<path
+									id="패스_2"
+									data-name="패스 2"
+									d="M14.1,11.343a.873.873,0,0,1-.268-1.7,15.52,15.52,0,0,1,6.253-.525.875.875,0,0,1-.2,1.738,13.79,13.79,0,0,0-5.518.455A2.425,2.425,0,0,1,14.1,11.343Z"
+									transform="translate(1.039 -3.748)"
+									fill="#553a3a"
+								/>
+								<path
+									id="패스_3"
+									data-name="패스 3"
+									d="M14.1,14a.873.873,0,0,1-.268-1.7,15.5,15.5,0,0,1,6.253-.525.875.875,0,0,1-.2,1.738,13.79,13.79,0,0,0-5.518.455A1.131,1.131,0,0,1,14.1,14Z"
+									transform="translate(1.039 -3.305)"
+									fill="#553a3a"
+								/>
+								<path
+									id="패스_4"
+									data-name="패스 4"
+									d="M14.1,16.663a.873.873,0,0,1-.268-1.7,15.5,15.5,0,0,1,6.253-.525.875.875,0,0,1-.2,1.738,13.79,13.79,0,0,0-5.518.455A1.131,1.131,0,0,1,14.1,16.663Z"
+									transform="translate(1.039 -2.862)"
+									fill="#553a3a"
+								/>
+							</g>
+						</g>
+					</g>
+				</svg>
 			</a>
 
 			<ul>
@@ -50,9 +146,13 @@
 			</ul>
 		</div>
 		<div class="end">
-			<div class="dark_toggle">
+			<div class="dark_toggle" on:click={toggleTheme}>
 				<span>다크모드</span>
-				<div class="status">OFF</div>
+				{#if currentTheme != THEMES.DARK}
+					<div class="status">OFF</div>
+				{:else}
+					<div class="status">ON</div>
+				{/if}
 			</div>
 			<div class="profile_box">
 				{#if user != null}
@@ -68,7 +168,7 @@
 								</div>
 							{/if}
 						</div>
-						<div class="name">CHIDILights</div>
+						<div class="name">솦과0짱이될테야</div>
 					</div>
 				{:else}
 					<div class="profile_info">
@@ -103,7 +203,8 @@
 		justify-content: center;
 		width: 100%;
 		height: 80px;
-		background: rgba(255, 248, 248, 0.75);
+		background: var(--header-color);
+		transition: background 0.3s ease-in-out;
 		backdrop-filter: blur(24px);
 		-webkit-backdrop-filter: blur(24px);
 		align-self: flex-start;
@@ -114,7 +215,7 @@
 			align-items: center;
 			.first {
 				filter: blur(0) !important;
-				-webkit-filter: blur(0) !important; /* Safari 6.0 - 9.0 */
+				-webkit-filter: blur(0) !important;
 				display: flex;
 				flex-direction: row;
 				align-items: center;
@@ -126,6 +227,12 @@
 					.logo {
 						width: 146px;
 						height: 28px;
+						g {
+							path {
+								fill: var(--logo-color);
+								transition: fill 0.3 ease-in-out;
+							}
+						}
 					}
 				}
 
@@ -141,25 +248,22 @@
 					li {
 						a {
 							text-decoration: none;
-
 							font-size: 22px;
-							color: #7f6868;
+							color: var(--text-color);
+							transition: color 0.3s ease-in-out;
 							word-break: keep-all;
 							word-wrap: normal;
-
 							&:visited {
-								color: #453737;
+								color: var(--text-color);
+								transition: color 0.3s ease-in-out;
 							}
-
 							&.selected {
 								color: #453737;
 								font-weight: 600;
-
 								&:hover {
 									color: #171212;
 								}
 							}
-
 							&:hover {
 								color: #453737;
 							}
@@ -167,42 +271,38 @@
 					}
 				}
 			}
-
 			.end {
 				display: flex;
 				flex-direction: row;
 				align-items: center;
 				width: auto;
 				justify-content: space-between;
-
 				.dark_toggle {
 					display: flex;
 					flex-direction: row;
 					align-items: center;
 					justify-content: space-between;
 					margin-right: 44px;
-
+					&:hover {
+						cursor: pointer;
+					}
 					span {
 						font-size: 22px;
-						color: #5a4e4e;
+						color: var(--button-color);
+						transition: color 0.3s ease-in-out;
 						margin-right: 12px;
 					}
 
 					.status {
 						font-size: 22px;
-						color: #b29898;
+						color: var(--theme-status-color);
+						transition: color 0.3s ease-in-out;
 					}
 				}
-
 				.profile_box {
 					display: flex;
 					flex-direction: row;
 					align-items: center;
-
-					img {
-						padding-left: 22px;
-						padding-right: 3px;
-					}
 
 					.profile_info {
 						width: auto;
@@ -212,26 +312,14 @@
 						justify-content: space-between;
 						padding-left: 3px;
 						padding-right: 3px;
-						color: #8a8a8a;
-
-						.lgnBtn {
-							text-decoration: none;
-						}
-
-						.lgnBtn:visited {
-						}
-
-						.lgnBtn:hover {
-						}
-
 						.profile_image {
-							background: url('/images/profile.svg');
-							border: 1px solid #ffe3e3;
+							background: blue;
+							border: 1px solid var(--selection-button-border-color);
+							transition: border 0.3s ease-in-out;
 							border-radius: 50%;
 							width: 32px;
 							height: 32px;
 							margin-right: 16px;
-
 							&:hover {
 								cursor: pointer;
 							}
@@ -239,7 +327,8 @@
 
 						.name {
 							font-size: 22px;
-							color: #5a4e4e;
+							color: var(--button-color);
+							transition: color 0.3s ease-in-out;
 							font-weight: 500;
 						}
 					}

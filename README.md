@@ -1,40 +1,26 @@
-# create-svelte
+# IngoBook_Frontend
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+IngoBook은 선린인터넷고등학교 학생들이 교과서 PDF와 개인 필기 노트 PDF 등을 안전하고 편리하게
+다운받고, 사용하고, 공유할 수 있는 PDF 포털입니다.
 
-## Creating a project
+## 구동법
 
-If you're seeing this, you've probably already done this step. Congrats!
+### git repo clone
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
+`git clone https://github.com/IngoTeamSunrin/IngoBook_Frontend.git`
 
-# create a new project in my-app
-npm init svelte@next my-app
-```
+### Setup
 
-> Note: the `@next` is temporary
+`npm install` 또는 `yarn`
 
-## Developing
+### Run
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+`npm run dev` 또는 `yarn dev`
 
-```bash
-npm run dev
+### Build
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+`npm run build` 또는 `yarn build`
 
-## Building
+## 연결된 다른 프로젝트,저장소들
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+IngoBook_Backend : IngoBook Backend 서버 저장소
