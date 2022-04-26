@@ -1,0 +1,16 @@
+	<svg
+		id="chevron_right_black_24dp"
+		xmlns="http://www.w3.org/2000/svg"
+		width="28"
+		height="28"
+		viewBox="0 0 28 28"
+	>
+		<path id="패스_492" data-name="패스 492" d="M28,0H0V28H28Z" fill="none" />
+		<path
+			id="패스_493"
+			data-name="패스 493"
+			d="M15.59,6l1.645,1.645L11.892,13l5.343,5.355L15.59,20l-7-7Z"
+			transform="translate(0.743 1)"
+			fill="#d8bcbc"
+		/>
+	</svg>
