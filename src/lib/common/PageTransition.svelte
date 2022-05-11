@@ -23,7 +23,6 @@
 		transition: background 0.3s ease-in-out;
 	}
 	.section {
-		top: 80px;
 		position: relative;
 		width: 100%;
 		min-height: 100vh;

@@ -129,14 +129,11 @@
 
 <AppBarTitle />
 <AnnounceBar />
-<div class="body_wrap">
-	<div class="body_wrap_vertical">
-		<div class="see_my_book">
-			<div class="top_wrap">
-				<div class="title">
-					내 책 찾기
-					<div class="underline" />
-				</div>
+<div class="w-[73.125rem] relative flex flex-col items-center h-auto">
+	<div class="flex relative mt-20 justify-between items-start w-full">
+		<div class="w-[565px] flex flex-col items-center">
+			<div class="w-[528px] flex justify-between items-center">
+				<div class="text-2xl font-semibold text-ingobook-brown-300">내 책 찾기</div>
 				<div class="see_all_content">
 					크게 보기
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
@@ -156,47 +153,45 @@
 				<BookList title="내 책 목록" books={myBooks} pagination={true} />
 			</div>
 		</div>
-		<div class="see_my_book">
-			<div class="top_wrap">
-				<div class="title">
-					학년별 찾기
-					<div class="underline" />
-				</div>
-				<div class="see_all_content">
-					크게 보기
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-						<path
-							id="패스_491"
-							data-name="패스 491"
-							d="M12,4,10.59,5.41,16.17,11H4v2H16.17l-5.58,5.59L12,20l8-8Z"
-							transform="translate(-4 -4)"
-							fill="#7f6868"
-						/>
-					</svg>
-				</div>
+		<div class="top_wrap">
+			<div class="title">
+				학년별 찾기
+				<div class="underline" />
 			</div>
-			<div class="main_wrap">
-				<div class="selection">
-					<div class="title">학년 선택</div>
-					<ul class="options">
-						<button class="option_filter selected">1학년</button>
-						<button class="option_filter">2학년</button>
-						<button class="option_filter">3학년</button>
-					</ul>
-				</div>
-				<div class="selection">
-					<div class="title">학과 선택</div>
-					<ul class="options">
-						<button class="option_filter selected">소프트웨어과</button>
-						<button class="option_filter">정보보호과</button>
-						<button class="option_filter">IT경영과</button>
-						<button class="option_filter">콘텐츠디자인과</button>
-					</ul>
-				</div>
-				<hr class="box_line" />
+			<div class="see_all_content">
+				크게 보기
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+					<path
+						id="패스_491"
+						data-name="패스 491"
+						d="M12,4,10.59,5.41,16.17,11H4v2H16.17l-5.58,5.59L12,20l8-8Z"
+						transform="translate(-4 -4)"
+						fill="#7f6868"
+					/>
+				</svg>
+			</div>
+		</div>
+		<div class="main_wrap">
+			<div class="selection">
+				<div class="title">학년 선택</div>
+				<ul class="options">
+					<button class="option_filter selected">1학년</button>
+					<button class="option_filter">2학년</button>
+					<button class="option_filter">3학년</button>
+				</ul>
+			</div>
+			<div class="selection">
+				<div class="title">학과 선택</div>
+				<ul class="options">
+					<button class="option_filter selected">소프트웨어과</button>
+					<button class="option_filter">정보보호과</button>
+					<button class="option_filter">IT경영과</button>
+					<button class="option_filter">콘텐츠디자인과</button>
+				</ul>
+			</div>
+			<hr class="box_line" />
 
-				<BookList books={myBooks} pagination={true} />
-			</div>
+			<BookList books={myBooks} pagination={true} />
 		</div>
 	</div>
 </div>

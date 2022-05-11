@@ -11,7 +11,7 @@
 			</svg>
 			공지사항
 		</div>
-		<div class="announce_title">
+		<div class="announce_title pt-0">
 			모든 저작물(PDF)의 무단 배포를 금하며, 모든 저작물의 권리는 각 출판사(저작권자)에게 있음을
 			알립니다.
 		</div>
@@ -27,9 +27,9 @@
 		justify-content: center;
 		align-items: center;
 		width: 100vw;
-		height: 72px;
+		height: 56px;
 		.wrap {
-			width: 1553px;
+			width: 1170px;
 			display: flex;
 			flex-direction: row;
 			justify-content: start;
@@ -42,7 +42,7 @@
 				align-items: center;
 				color: var(--accent-text-color);
 				transition: color 0.3s ease-in-out;
-				font-size: 22px;
+				font-size: 14px;
 				font-weight: 600;
 				margin-right: 24px;
 				svg {
@@ -56,7 +56,7 @@
 			.announce_title {
 				color: var(--title-text-color);
 				transition: color 0.3s ease-in-out;
-				font-size: 22px;
+				font-size: 14px;
 			}
 		}
 	}
